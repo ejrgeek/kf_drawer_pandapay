@@ -1,8 +1,10 @@
 import 'package:kfdrawer/screens/home_page.dart';
-import 'package:kfdrawer/screens/taxas.dart';
+import 'package:kfdrawer/screens/cash_in_page.dart';
+import 'package:kfdrawer/screens/invite_friends_page.dart';
+import 'package:kfdrawer/screens/site_page.dart';
+import 'package:kfdrawer/screens/tax_page.dart';
 
-import '../screens/calendar_page.dart';
-import '../screens/settings_page.dart';
+import '../screens/help_page.dart';
 
 typedef T Constructor<T>();
 
@@ -14,10 +16,12 @@ void register<T>(Constructor<T> constructor) {
 
 class ClassBuilder {
   static void registerClasses() {
-    register<TaxasPage>(() => TaxasPage());
     register<HomePage>(() => HomePage());
-    register<CalendarPage>(() => CalendarPage());
-    register<SettingsPage>(() => SettingsPage());
+    register<TaxPage>(() => TaxPage());
+    register<CashInPage>(() => CashInPage());
+    register<InviteFriendsPage>(() => InviteFriendsPage());
+    register<SitePage>(() => SitePage());
+    register<HelpPage>(() => HelpPage());
   }
 
   static dynamic fromString(String type) {

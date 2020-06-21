@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kf_drawer/kf_drawer.dart';
 
-class CalendarPage extends KFDrawerContent {
+// ignore: must_be_immutable
+class HelpPage extends KFDrawerContent {
   @override
-  _CalendarPageState createState() => _CalendarPageState();
+  _HelpPageState createState() => _HelpPageState();
 }
 
-class _CalendarPageState extends State<CalendarPage> {
+class _HelpPageState extends State<HelpPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,7 +36,7 @@ class _CalendarPageState extends State<CalendarPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('Calendar'),
+                  Text('AJUDA'),
                 ],
               ),
             ),

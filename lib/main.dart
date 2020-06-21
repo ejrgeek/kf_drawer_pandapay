@@ -1,11 +1,16 @@
+import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kfdrawer/screens/site_page.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kf_drawer/kf_drawer.dart';
+import 'package:kfdrawer/screens/cash_in_page.dart';
+import 'package:kfdrawer/screens/help_page.dart';
+import 'package:kfdrawer/screens/invite_friends_page.dart';
 
 import 'screens/auth_page.dart';
-import 'screens/calendar_page.dart';
 import 'screens/home_page.dart';
-import 'screens/taxas.dart';
+import 'screens/tax_page.dart';
 import 'utils/class_builder.dart';
 
 void main() {
@@ -50,32 +55,32 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
         ),
         KFDrawerItem.initWithPage(
           text: Text('Taxas', style: TextStyle(color: Colors.white)),
-          icon: Icon(Icons.money_off, color: Colors.white),
-          page: TaxasPage(),
+          icon: SvgPicture.asset('assets/tax-icon.svg'),
+          page: TaxPage(),
         ),
         KFDrawerItem.initWithPage(
           text: Text(
             'Cobrar',
             style: TextStyle(color: Colors.white),
           ),
-          icon: Icon(Icons.monetization_on, color: Colors.white),
-          page: CalendarPage(),
+          icon: SvgPicture.asset('assets/cash-in-icon.svg'),
+          page: CashInPage(),
         ),
         KFDrawerItem.initWithPage(
           text: Text(
             'Convidar amigos',
             style: TextStyle(color: Colors.white),
           ),
-          icon: Icon(Icons.group_add, color: Colors.white),
-          page: ClassBuilder.fromString('SettingsPage'),
+          icon: SvgPicture.asset('assets/invite-friends-icon.svg'),
+          page: InviteFriendsPage(),
         ),
         KFDrawerItem.initWithPage(
           text: Text(
             'Nosso site',
             style: TextStyle(color: Colors.white),
           ),
-          icon: Icon(Icons.language, color: Colors.white),
-          page: ClassBuilder.fromString('SettingsPage'),
+          icon: SvgPicture.asset('assets/site-icon.svg'),
+          page: SitePage(),
         ),
         KFDrawerItem.initWithPage(
           text: Text(
@@ -83,7 +88,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
             style: TextStyle(color: Colors.white),
           ),
           icon: Icon(Icons.help_outline, color: Colors.white),
-          page: ClassBuilder.fromString('SettingsPage'),
+          page: HelpPage(),
         ),
       ],
     );
@@ -92,23 +97,16 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: KFDrawer(
-//        borderRadius: 0.0,
-//        shadowBorderRadius: 0.0,
-//        menuPadding: EdgeInsets.all(0.0),
-//        scrollable: true,
         controller: _drawerController,
         header: Align(
           alignment: Alignment.centerLeft,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            width: MediaQuery.of(context).size.width * 0.6,
-            child: Text(
-              'PANDAPAY',
-              style: TextStyle(
+              height: 30,
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: SvgPicture.asset(
+                'assets/logo_horizontal.svg',
                 color: Colors.white,
-                fontWeight: FontWeight.bold
-              ),
-            )
+              )
           ),
         ),
         footer: KFDrawerItem(
@@ -116,11 +114,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
             'Sair',
             style: TextStyle(color: Colors.white),
           ),
-          icon: Icon(
-            Icons.exit_to_app,
-            textDirection: TextDirection.rtl,
-            color: Colors.white,
-          ),
+          icon: SvgPicture.asset('assets/exit-icon.svg'),
           onPressed: () {
             Navigator.of(context).push(CupertinoPageRoute(
               fullscreenDialog: true,

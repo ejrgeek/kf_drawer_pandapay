@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kf_drawer/kf_drawer.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class TaxasPage extends KFDrawerContent {
-  TaxasPage({
+// ignore: must_be_immutable
+class SitePage extends KFDrawerContent {
+  SitePage({
     Key key,
   });
 
   @override
-  _TaxasPageState createState() => _TaxasPageState();
+  _SitePageState createState() => _SitePageState();
 }
 
-class _TaxasPageState extends State<TaxasPage> {
+class _SitePageState extends State<SitePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,7 +41,7 @@ class _TaxasPageState extends State<TaxasPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('TAXAS'),
+                  Text('NOSSO SITE'),
                 ],
               ),
             ),

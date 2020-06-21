@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kf_drawer/kf_drawer.dart';
 
-class SettingsPage extends KFDrawerContent {
+// ignore: must_be_immutable
+class InviteFriendsPage extends KFDrawerContent {
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  _InviteFriendsPageState createState() => _InviteFriendsPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class _InviteFriendsPageState extends State<InviteFriendsPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,7 +36,7 @@ class _SettingsPageState extends State<SettingsPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('Settings'),
+                  Text('CONVIDE SEUS AMIGOS'),
                 ],
               ),
             ),
@@ -43,6 +44,5 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
       ),
     );
-    ;
   }
 }

@@ -38,7 +38,7 @@ class _AuthPageState extends State<AuthPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text('Sign in'),
+                      Text('ENTRAR'),
                     ],
                   ),
                 ),
